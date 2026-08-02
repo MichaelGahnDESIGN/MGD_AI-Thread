@@ -70,3 +70,9 @@ Fehlt `/todo`, funktioniert `/thread` unverändert — der Schritt entfällt sti
 ## Lizenz
 
 MIT — siehe [LICENSE](LICENSE).
+
+---
+
+## Impressum
+
+Angaben gemäß § 5 DDG — siehe [`IMPRESSUM.md`](IMPRESSUM.md).
