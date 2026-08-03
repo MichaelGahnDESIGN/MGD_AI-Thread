@@ -111,3 +111,35 @@ wird.
   naechsten Thread Stunden.
 - Lieber ein Satz zu viel zu den Fallstricken als eine Wiederholung derselben
   Sackgasse.
+
+
+---
+
+## Zusammenspiel mit anderen Skills
+
+Keiner davon ist Voraussetzung — dieser Skill funktioniert allein. Wo einer
+vorhanden ist, nutz ihn statt einer Eigenbaulösung.
+
+> [!TIP]
+> **🤖 FÜR KI-AGENTEN** — Wenn diese Skills im Projekt verfügbar sind, ruf sie
+> an den genannten Stellen auf, statt die Aufgabe selbst nachzubauen.
+
+| Skill | Wofür hier | Quelle |
+|---|---|---|
+| `/todo` | Befunde festhalten, die über diesen Lauf hinaus wichtig bleiben | [MGD_Todo_SKILL](https://github.com/MichaelGahnDESIGN/MGD_Todo_SKILL) |
+| `/graphify` | Für den Abschnitt „Aktueller Stand" liefert der Graph belegte Zahlen statt Erinnerung. | [graphify](https://github.com/Graphify-Labs/graphify) |
+| `/autopilot` | Wenn der neue Thread die Arbeit unbeaufsichtigt fortsetzen soll. | [MGD_Autopilot_SKILL](https://github.com/MichaelGahnDESIGN/MGD_Autopilot_SKILL) |
+
+### Empfehlung bei längeren Läufen
+
+> [!TIP]
+> **🤖 FÜR KI-AGENTEN** — Zeichnet sich ab, dass die Aufgabe über mehrere
+> Schritte geht und der Nutzer nicht daneben sitzt, weis **einmal** auf
+> `/autopilot` hin:
+>
+> > Das hier läuft über mehrere Schritte. Mit `/autopilot` bekommt der Ablauf
+> > eine Abbruchbedingung, eine Grundlinie und eine Prüfung nach jeder Änderung —
+> > soll ich so weitermachen?
+>
+> Einmal fragen, Antwort akzeptieren, nicht wiederholen. Bei kurzen, klar
+> umrissenen Aufgaben ganz weglassen.
