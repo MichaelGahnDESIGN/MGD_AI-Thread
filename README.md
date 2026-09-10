@@ -59,11 +59,18 @@ Nach der Installation in einem beliebigen Projekt `/thread` eingeben.
 | `/thread` | Erzeugt einen vollständigen Übergabe-Prompt für einen neuen Thread |
 | `/thread <thema>` | Grenzt die Übergabe auf ein Thema ein |
 | `/thread --kurz` | Nur der Prompt, ohne Belegteil |
-| `/thread --datei` | Legt die Übergabe zusätzlich als Markdown-Datei ab |
+| `/thread --datei` | Ohne Wirkung — die Datei entsteht seit v1.1.0 immer |
 
 > [!WARNING]
-> **⚠️ FALLSTRICK** — Ohne `--datei` existiert die Übergabe nur im Codeblock
-> der Antwort. Schließt der Thread, bevor der Prompt kopiert wurde, ist er weg.
+> **⚠️ FALLSTRICK — die Übergabe zerreißt im Chat.** Bis v1.0 gab der Skill die
+> Übergabe als einen großen Codeblock aus. Das funktioniert nicht: Abschnitt 7
+> („Arbeitsweise") besteht aus Befehlen, also aus Codeblöcken. Der erste innere
+> Zaun beendet den äußeren — die Übergabe zerfällt in Bruchstücke und lässt sich
+> nicht mehr am Stück kopieren.
+>
+> **Seit v1.1.0 landet die Übergabe deshalb immer in einer Datei**
+> (`PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md`), und Befehle darin werden
+> eingerückt statt gezäunt. Damit überlebt sie auch das Ende des Threads.
 
 ### Die fünf Arbeitsschritte
 
@@ -78,8 +85,10 @@ nach ab:
 3. **Den Prompt schreiben** — in den acht festen Abschnitten unten.
 4. **Gegenlesen** — vier Kontrollfragen, bevor der Prompt ausgegeben wird
    (siehe Ehrlichkeitsregeln).
-5. **Ausgeben** — im Codeblock zum Kopieren; bei `--datei` zusätzlich unter
-   `PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md` ablegen.
+5. **Ausgeben** — immer als Datei unter
+   `PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md`, mit eingerückten statt
+   gezäunten Befehlen; der Pfad und ein `cat`-Befehl zum Wiedereinlesen werden
+   genannt.
 
 ### Die acht Abschnitte des Prompts
 
@@ -104,8 +113,9 @@ nach ab:
 
 - Der Skill überwacht das Kontextfenster nicht selbst — der Agent muss
   `/thread` aktiv aufrufen, bevor der Kontext voll ist.
-- Ohne `--datei` wird nichts abgelegt; die Übergabe existiert nur so lange,
-  wie die Chat-Antwort mit dem Codeblock sichtbar bleibt.
+- Die Datei landet im Projekt und ist damit nur so sicher wie das Projekt
+  selbst — wer sie über Rechnergrenzen hinweg braucht, muss sie mitnehmen
+  (in vielen Projekten ist `PROJEKT/` bewusst nicht eingecheckt).
 - Die Faktenbasis in Schritt 1 sind Git-Befehle — für Projekte ohne
   Git-Historie liefert dieser Schritt entsprechend weniger.
 - Die Einbindung von Todos setzt den separaten `/todo`-Skill voraus; ohne ihn
@@ -125,6 +135,10 @@ nach ab:
 | Projekt | Zusammenspiel |
 |---------|---------------|
 | [MGD_Todo_SKILL](https://github.com/MichaelGahnDESIGN/MGD_Todo_SKILL) | Ist der Skill im selben Projekt vorhanden, zieht `/thread` dessen offene Punkte per `/todo-export` in die Übergabe und legt neue Befunde vorher per `/todo-add` an. Fehlt er, funktioniert `/thread` unverändert — der Schritt entfällt still. |
+
+## Änderungen
+
+Siehe [CHANGELOG.md](CHANGELOG.md). Aktuelle Fassung: **1.1.0**.
 
 ## Lizenz
 

@@ -19,7 +19,7 @@ Skill zwingt deshalb an mehreren Stellen zur Ehrlichkeit.
 /thread                 # Uebergabe fuer das aktuelle Projekt
 /thread <thema>         # Uebergabe auf ein Thema eingegrenzt
 /thread --kurz          # nur der Prompt, ohne Belege
-/thread --datei         # zusaetzlich als Markdown-Datei ablegen
+/thread --datei         # ohne Wirkung, die Datei entsteht seit v1.1.0 immer
 ```
 
 ## Was der Skill tun MUSS
@@ -94,10 +94,32 @@ Pruefe den Prompt gegen diese Fragen, bevor du ihn ausgibst:
 
 ### Schritt 5 — Ausgeben
 
-Gib den Prompt in einem Codeblock aus, damit er sich in einem Stueck kopieren
-laesst. Bei `--datei` zusaetzlich ablegen unter
-`PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md` (oder, falls es den Ordner nicht
-gibt, im Projektwurzelverzeichnis).
+**Schreib die Uebergabe IMMER in eine Datei**, nicht nur in die Antwort:
+
+```
+PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md
+```
+
+Gibt es den Ordner nicht, leg ihn an; fehlt `PROJEKT/`, nimm das
+Projektwurzelverzeichnis. Nenne dem Nutzer den Pfad und gib ihm den Befehl zum
+Wiedereinlesen mit:
+
+```bash
+cat "PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md"
+```
+
+> [!WARNING]
+> **⚠️ FALLSTRICK — die Uebergabe zerreisst im Chat.** Frueher lautete dieser
+> Schritt „gib den Prompt in einem Codeblock aus". Das funktioniert nicht:
+> Abschnitt 7 der Uebergabe besteht aus Befehlen, also aus Codebloecken. Der
+> erste innere Zaun (```) beendet den aeusseren — die Uebergabe zerfaellt in
+> Bruchstuecke und laesst sich nicht mehr am Stueck kopieren. Genau deshalb ist
+> die Datei jetzt der Regelfall und nicht mehr die Option `--datei`.
+>
+> Innerhalb der Datei: **Befehle um vier Leerzeichen einruecken statt sie zu
+> zaeunen.** Eingerueckte Bloecke rendern gleich, koennen aber nichts abbrechen.
+> Muss der Text doch im Chat erscheinen (z. B. `--kurz`), umschliesse ihn mit
+> **vier** Backticks — dann ueberleben dreifache Zaeune im Inneren.
 
 Nenne dem Nutzer zum Schluss in einem Satz, was der neue Thread als Erstes tun
 wird.
