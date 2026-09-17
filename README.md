@@ -49,8 +49,9 @@ Nach der Installation in einem beliebigen Projekt `/thread` eingeben.
 > [!TIP]
 > **🤖 FÜR KI-AGENTEN** — Der Befehl sammelt Fakten aus dem Projekt (nicht aus
 > der Erinnerung: `git log`, `git status`, `git rev-parse`), bezieht optional
-> offene Todos aus dem `/todo`-Skill ein und gibt einen kopierfertigen Prompt
-> für einen neuen Thread aus.
+> offene Todos aus dem `/todo`-Skill ein, schreibt die vollständige Übergabe
+> in eine Datei und gibt dazu einen kurzen, kopierfertigen Startprompt aus,
+> der diese Datei referenziert.
 
 ## Die wichtigsten Funktionen/Befehle
 
@@ -87,8 +88,12 @@ nach ab:
    (siehe Ehrlichkeitsregeln).
 5. **Ausgeben** — immer als Datei unter
    `PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md`, mit eingerückten statt
-   gezäunten Befehlen; der Pfad und ein `cat`-Befehl zum Wiedereinlesen werden
-   genannt.
+   gezäunten Befehlen. Danach folgen drei Dinge: der Pfad, ein `cat`-Befehl
+   zum Wiedereinlesen — und, seit v1.2.0, ein kurzer **Startprompt**: der
+   Satz, den man unverändert als erste Nachricht in den neuen Thread
+   einfügt. Er nennt den Dateipfad und die nächste Aufgabe aus Abschnitt 3.
+   Ohne ihn bleibt die Übergabe ein Dokument, das man selbst erst noch in
+   eine Anweisung übersetzen muss.
 
 ### Die acht Abschnitte des Prompts
 
@@ -138,7 +143,7 @@ nach ab:
 
 ## Änderungen
 
-Siehe [CHANGELOG.md](CHANGELOG.md). Aktuelle Fassung: **1.1.0**.
+Siehe [CHANGELOG.md](CHANGELOG.md). Aktuelle Fassung: **1.2.0**.
 
 ## Lizenz
 

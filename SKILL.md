@@ -101,12 +101,33 @@ PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md
 ```
 
 Gibt es den Ordner nicht, leg ihn an; fehlt `PROJEKT/`, nimm das
-Projektwurzelverzeichnis. Nenne dem Nutzer den Pfad und gib ihm den Befehl zum
-Wiedereinlesen mit:
+Projektwurzelverzeichnis.
 
-```bash
-cat "PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md"
-```
+Nenne dem Nutzer danach DREI Dinge, in dieser Reihenfolge — alle drei, nicht
+nur den Pfad:
+
+1. **Den Pfad zur Datei.**
+2. **Den `cat`-Befehl zum Wiedereinlesen**, fuer den Nutzer selbst:
+
+   ```bash
+   cat "PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md"
+   ```
+
+3. **Einen kurzen Startprompt.** Das ist der eigentliche Zweck des Skills,
+   nicht nur ein Ablagepfad: der Satz (oder die drei Saetze), den der Nutzer
+   unveraendert als ERSTE Nachricht in den neuen Thread einfuegt. Er nennt
+   den Dateipfad ausdruecklich — der neue Agent kennt weder das Projekt noch
+   diese Sitzung und muss die Datei selbst lesen — und die naechste Aufgabe
+   aus Abschnitt 3 in einem Satz, damit der neue Thread nicht erst raten muss,
+   womit er anfaengt. Ohne diesen Startprompt bleibt die Uebergabe ein
+   Dokument, das jemand erst noch in eine Anweisung uebersetzen muss.
+
+   Beispiel:
+
+   ```
+   Lies zuerst die Uebergabe unter PROJEKT/UEBERGABEN/2026-09-17-thema.md
+   vollstaendig und mach dann mit Abschnitt 3 weiter: <ein Satz, was zu tun ist>.
+   ```
 
 > [!WARNING]
 > **⚠️ FALLSTRICK — die Uebergabe zerreisst im Chat.** Frueher lautete dieser
@@ -119,10 +140,9 @@ cat "PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md"
 > Innerhalb der Datei: **Befehle um vier Leerzeichen einruecken statt sie zu
 > zaeunen.** Eingerueckte Bloecke rendern gleich, koennen aber nichts abbrechen.
 > Muss der Text doch im Chat erscheinen (z. B. `--kurz`), umschliesse ihn mit
-> **vier** Backticks — dann ueberleben dreifache Zaeune im Inneren.
-
-Nenne dem Nutzer zum Schluss in einem Satz, was der neue Thread als Erstes tun
-wird.
+> **vier** Backticks — dann ueberleben dreifache Zaeune im Inneren. Der kurze
+> Startprompt aus Punkt 3 ist davon nicht betroffen: er enthaelt selbst keine
+> Codebloecke und darf normal gezaeunt ausgegeben werden.
 
 ## Ehrlichkeitsregeln
 

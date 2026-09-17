@@ -1,5 +1,26 @@
 # Changelog
 
+## 1.2.0 — 2026-09-17
+
+### Hinzugefügt
+
+- **Ein kurzer Startprompt gehört jetzt fest zur Ausgabe.** Bisher endete
+  Schritt 5 mit „nenne dem Nutzer in einem Satz, was der neue Thread als
+  Erstes tun wird" — das blieb vage genug, dass die Übergabe manchmal nur
+  als Datei im Projekt lag, ohne dass irgendwo die eine Nachricht stand,
+  die man tatsächlich in den neuen Thread einfügt. Schritt 5 verlangt jetzt
+  ausdrücklich drei Dinge: den Dateipfad, den `cat`-Befehl zum
+  Wiedereinlesen — und den Startprompt selbst, mit Dateipfad und der
+  nächsten Aufgabe aus Abschnitt 3, fertig zum Einfügen als erste Nachricht.
+
+### Warum
+
+Ein Nutzer stellte nach einer erzeugten Übergabe fest, dass er selbst noch
+hätte formulieren müssen, wie er damit einen neuen Thread startet — die
+Datei allein ist eine Ablage, keine Übergabe. Der kurze Startprompt ist von
+dem Codeblock-Fallstrick aus 1.1.0 nicht betroffen: er enthält selbst keine
+verschachtelten Befehle und darf normal gezäunt im Chat stehen.
+
 ## 1.1.0 — 2026-09-11
 
 ### Behoben
