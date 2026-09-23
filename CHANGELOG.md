@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.0 — 2026-09-23
+
+### Hinzugefügt
+
+- Vor einer Übergabe werden fertige, geprüfte Änderungen bei vorhandenem
+  Remote und passender Freigabe selektiv committed, gepusht und verifiziert.
+- Die Übergabedatei wird ebenfalls versioniert, sofern Projektregeln und
+  `.gitignore` dies erlauben. Fehlende oder gescheiterte Pushes werden klar
+  als offen ausgewiesen; `/thread` löst keinen produktiven Deploy aus.
+
 ## 1.2.0 — 2026-09-17
 
 ### Hinzugefügt

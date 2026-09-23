@@ -61,6 +61,21 @@ vorher an:
 So ueberlebt ein Befund den Threadwechsel auch dann, wenn die Uebergabe
 irgendwann verloren geht.
 
+### Schritt 2a — Fertige Arbeit vor der Uebergabe sichern
+
+Pruefe `git status`, den Diff und die Projektregeln. Trenne fertige,
+validierte Aenderungen von unfertiger oder fremder Arbeit. Wenn GitHub/Gitea
+als Projekt-Remote eingerichtet ist und der Nutzer oder die Projektregeln
+Commit und Push erlauben, committe nur die geprueften Dateien und pushe nur
+den vorgesehenen Branch. Pruefe danach den Remote-Stand. Der Aufruf von
+`/thread` ist allein keine Freigabe fuer einen produktiven Deploy.
+
+Secrets, Backups, Playtest-Artefakte und private Daten bleiben lokal. Ueberschreibe
+keine fremden Aenderungen und nutze kein `git push --all`, `--mirror` oder
+Force-Push. Scheitert ein Test oder Push, bleibt die Arbeit als offen im Prompt;
+stelle sie nicht als live dar. Falls kein Remote oder keine Push-Freigabe
+vorliegt, dokumentiere den genauen Grund und den lokalen Commit-Stand.
+
 ### Schritt 3 — Den Prompt schreiben
 
 Der Prompt richtet sich an einen Agenten, der **nichts** ueber die Sitzung
@@ -102,6 +117,12 @@ PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md
 
 Gibt es den Ordner nicht, leg ihn an; fehlt `PROJEKT/`, nimm das
 Projektwurzelverzeichnis.
+
+Pruefe auch die fertige Uebergabedatei auf Secrets und vertrauliche Pfade.
+Wenn Projektregeln und `.gitignore` das Versionieren von Uebergaben erlauben,
+committe und pushe die Datei ebenfalls auf den vorgesehenen Remote-Branch.
+Andernfalls bleibt sie lokal; nenne das ausdruecklich. Pruefe nach einem Push
+den Remote-Stand und nenne in der Ausgabe den letzten bestaetigten Commit.
 
 Nenne dem Nutzer danach DREI Dinge, in dieser Reihenfolge — alle drei, nicht
 nur den Pfad:

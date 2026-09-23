@@ -4,6 +4,11 @@ Ein Skill für KI-Agenten (**Claude Code** & **ChatGPT Codex**), der eine
 Übergabe schreibt, bevor das Kontextfenster voll ist — damit ein neuer Thread
 nahtlos weiterarbeitet, statt bei null anzufangen.
 
+Vor der Übergabe sichert er fertige und geprüfte Projektarbeit mit Commit und
+Push, wenn ein Remote eingerichtet ist und die Projektregeln das erlauben.
+Unfertige Arbeit, fehlgeschlagene Prüfungen und ausstehende Pushes werden in
+der Übergabe offen benannt. `/thread` startet keinen produktiven Deploy.
+
 ## Das Problem
 
 Lange Arbeitsthreads enden selten sauber. Irgendwann ist der Kontext voll, und
@@ -73,7 +78,7 @@ Nach der Installation in einem beliebigen Projekt `/thread` eingeben.
 > (`PROJEKT/UEBERGABEN/<JJJJ-MM-TT>-<thema>.md`), und Befehle darin werden
 > eingerückt statt gezäunt. Damit überlebt sie auch das Ende des Threads.
 
-### Die fünf Arbeitsschritte
+### Die fünf Arbeitsschritte und der Git-Zwischenschritt
 
 Laut `SKILL.md` arbeitet der Agent bei jedem Aufruf diese Schritte der Reihe
 nach ab:
@@ -83,6 +88,9 @@ nach ab:
    um Versionsdatei, Changelog, Deploy-Marker.
 2. **Todos einbeziehen** — ist der `/todo`-Skill vorhanden, offene Punkte per
    `/todo-export` übernehmen und neue Funde vorher per `/todo-add` anlegen.
+2a. **Fertige Arbeit sichern** — geprüfte Änderungen getrennt committen und
+   auf den vorgesehenen Remote-Branch pushen; Remote-Stand prüfen. Unfertige,
+   fremde und sensible Dateien bleiben unangetastet.
 3. **Den Prompt schreiben** — in den acht festen Abschnitten unten.
 4. **Gegenlesen** — vier Kontrollfragen, bevor der Prompt ausgegeben wird
    (siehe Ehrlichkeitsregeln).
@@ -92,8 +100,9 @@ nach ab:
    zum Wiedereinlesen — und, seit v1.2.0, ein kurzer **Startprompt**: der
    Satz, den man unverändert als erste Nachricht in den neuen Thread
    einfügt. Er nennt den Dateipfad und die nächste Aufgabe aus Abschnitt 3.
-   Ohne ihn bleibt die Übergabe ein Dokument, das man selbst erst noch in
-   eine Anweisung übersetzen muss.
+   Wenn das Projekt Übergaben versioniert, wird auch diese geprüfte Datei
+   committed und gepusht. Ohne ihn bleibt die Übergabe ein Dokument, das man
+   selbst erst noch in eine Anweisung übersetzen muss.
 
 ### Die acht Abschnitte des Prompts
 
@@ -143,7 +152,7 @@ nach ab:
 
 ## Änderungen
 
-Siehe [CHANGELOG.md](CHANGELOG.md). Aktuelle Fassung: **1.2.0**.
+Siehe [CHANGELOG.md](CHANGELOG.md). Aktuelle Fassung: **1.3.0**.
 
 ## Lizenz
 
