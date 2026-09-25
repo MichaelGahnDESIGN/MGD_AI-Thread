@@ -1,3 +1,15 @@
+<!-- MGD-HEADER -->
+<p align="center"><a href="https://Michael-Gahn.de"><img src="assets/mgd-logo.png" alt="Michael Gahn DESIGN" width="48"></a></p>
+
+<p align="center"><img src="assets/banner.svg" alt="MGD AI Thread" width="100%"></p>
+
+<p align="center">
+  <img alt="Lizenz" src="https://img.shields.io/github/license/MichaelGahnDESIGN/MGD_AI-Thread?label=Lizenz">
+  <a href="https://github.com/MichaelGahnDESIGN/MGD_AI-Thread/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/MichaelGahnDESIGN/MGD_AI-Thread?label=Release"></a>
+  <a href="https://Michael-Gahn.de"><img alt="by Michael Gahn DESIGN" src="https://img.shields.io/badge/by-Michael%20Gahn%20DESIGN-cd1616"></a>
+</p>
+<!-- /MGD-HEADER -->
+
 # MGD — AI-Thread SKILL
 
 Ein Skill für KI-Agenten (**Claude Code** & **ChatGPT Codex**), der eine
