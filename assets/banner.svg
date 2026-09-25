@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-label="MGD AI Thread">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b3df5"/><stop offset="1" stop-color="#2b7bff"/></linearGradient>
+    <radialGradient id="glow" cx=".85" cy=".1" r=".9"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <clipPath id="c"><rect width="1280" height="320" rx="24"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="1280" height="320" fill="url(#g)"/>
+    <rect width="1280" height="320" fill="url(#glow)"/>
+  <line x1="327" y1="167" x2="279" y2="253" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="327" y1="167" x2="200" y2="160" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="279" y1="253" x2="152" y2="260" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="279" y1="253" x2="200" y2="160" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="152" y1="260" x2="72" y2="205" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="152" y1="260" x2="200" y2="160" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="72" y1="205" x2="99" y2="110" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="72" y1="205" x2="200" y2="160" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="99" y1="110" x2="177" y2="55" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="99" y1="110" x2="200" y2="160" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="177" y1="55" x2="313" y2="90" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="177" y1="55" x2="200" y2="160" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="313" y1="90" x2="327" y2="167" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="313" y1="90" x2="200" y2="160" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="200" y1="160" x2="279" y2="253" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="200" y1="160" x2="200" y2="160" stroke="#fff" stroke-opacity=".22" stroke-width="2"/>
+  <circle cx="327" cy="167" r="12" fill="#fff" fill-opacity=".28"/>
+  <circle cx="279" cy="253" r="9" fill="#fff" fill-opacity=".28"/>
+  <circle cx="152" cy="260" r="9" fill="#fff" fill-opacity=".28"/>
+  <circle cx="72" cy="205" r="12" fill="#fff" fill-opacity=".28"/>
+  <circle cx="99" cy="110" r="6" fill="#fff" fill-opacity=".28"/>
+  <circle cx="177" cy="55" r="9" fill="#fff" fill-opacity=".28"/>
+  <circle cx="313" cy="90" r="7" fill="#fff" fill-opacity=".28"/>
+  <circle cx="200" cy="160" r="12" fill="#fff" fill-opacity=".28"/>
+    <text x="420" y="140" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="78" font-weight="700" fill="#fff" letter-spacing="-1">MGD AI Thread</text>
+    <text x="422" y="196" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="23" fill="#fff" fill-opacity=".86">Skill für Claude Code &amp; ChatGPT Codex: schreibt eine</text><text x="422" y="226" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="23" fill="#fff" fill-opacity=".86">ehrliche Übergabe, bevor das Kontextfenster voll…</text>
+    <rect x="422" y="266" width="218" height="30" rx="15" fill="#fff" fill-opacity=".18"/>
+    <text x="436" y="287" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#fff">Skill für KI-Agenten</text>
+  </g>
+</svg>
